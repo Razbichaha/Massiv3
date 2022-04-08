@@ -26,38 +26,28 @@ namespace Massiv3
 
             Console.Write("\n");
             int maximumCounter = 0;
+            
+                if (array[0] > array[1])
+                {
+                    maximumCounter++;
+                Console.Write("Максимум №" + maximumCounter + " = " + array[0] + "\n");
+                }
 
-            for(int i=0;i<array.Length;i++ )
+            for (int i=1;i<array.Length-1;i++ )
             {
-
-                if (i == 0)
-                {
-                    if (array[i] > array[i + 1])
-                    {
-                        maximumCounter++;
-                        Console.Write("Максимум №" + maximumCounter + " = " + array[i] + "\n");
-                    }
-
-                } else if (i == array.Length - 1)
-                {
-
-                    if (array[i] > array[i - 1])
-                    {
-                        maximumCounter++;
-                        Console.Write("Максимум №" + maximumCounter + " = " + array[i] + "\n");
-                    }
-
-                }else
-                 { 
 
                     if (array[i]>array[i+1]&array[i]>array[i-1])
                     {
                     maximumCounter++;
                     Console.Write("Максимум №" + maximumCounter + " = " + array[i]+"\n");
                     }
-
-                 }
             }
+            
+                if (array[array.Length-1] > array[array.Length - 2])
+                {
+                    maximumCounter++;
+                    Console.Write("Максимум №" + maximumCounter + " = " + array[array.Length-1] + "\n");
+                }
 
             Console.ReadLine();
         }
